@@ -1,0 +1,1026 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+:root {
+    --blue: #8bd9f4;
+    --pink: #ff9fcb;
+    --dark: #49334f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--dark);
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #fff4fa, #f0f7ff, #fff8e9, #fceeff);
+    background-size: 300% 300%;
+    animation: backgroundFlow 14s ease infinite;
+}
+
+button {
+    font: inherit;
+}
+
+.ambient-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.decoration {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    user-select: none;
+    line-height: 1;
+    opacity: 0;
+    animation: floatUp linear infinite;
+    will-change: transform, opacity;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 32px, 1000px);
+    min-height: 100vh;
+    margin: auto;
+    padding: 44px 0 24px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 35px;
+}
+
+.small-title {
+    color: #a26a9b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 13px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: #d46ca7;
+    text-shadow: 2px 4px 0 #ffffff;
+}
+
+h1 span {
+    color: #8bd9f4;
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: #816c89;
+    font-size: 14px;
+}
+
+.age {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 19px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    background: #ffffff9c;
+    color: #bd6ca5;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 5px 20px #c9a4d522;
+}
+
+.birthday-girls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.girl-card {
+    position: relative;
+    padding: 24px 12px 22px;
+    border: 1px solid #ffffff;
+    border-radius: 28px;
+    background: #ffffff9c;
+    box-shadow: 0 15px 40px #bda4c326;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: cardAppear 0.8s both;
+}
+
+.girl-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.girl-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px #bda4c33d;
+}
+
+.maram-card {
+    border-bottom: 4px solid #9cdef4;
+}
+
+.merhan-card {
+    border-bottom: 4px solid #ffb4d7;
+}
+
+.girl-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #5ebbdc;
+}
+
+.merhan-card .girl-name {
+    color: #e77bac;
+}
+
+.character {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #8c7894;
+}
+
+.cake-button {
+    display: block;
+    width: 100%;
+    margin: 18px auto 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cake-scene {
+    position: relative;
+    width: min(100%, 280px);
+    height: 230px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    filter: drop-shadow(0 12px 8px #b68db525);
+    animation: cakeFloat 3s ease-in-out infinite;
+    transition: transform 0.25s ease;
+}
+
+.cake-button:hover .cake-scene {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+.cake-button:active .cake-scene {
+    transform: scale(0.96);
+}
+
+.candles {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: -2px;
+}
+
+.candle {
+    position: relative;
+    width: 9px;
+    height: 37px;
+    border-radius: 4px 4px 1px 1px;
+    background: repeating-linear-gradient(
+        135deg,
+        #ffffff 0 5px,
+        #a6e7f8 5px 10px
+    );
+    box-shadow: inset -2px 0 2px #7ccde5;
+}
+
+.pink-cake .candle {
+    background: repeating-linear-gradient(
+        135deg,
+        #ffffff 0 5px,
+        #ffacd0 5px 10px
+    );
+    box-shadow: inset -2px 0 2px #e58bb5;
+}
+
+.candle i {
+    position: absolute;
+    width: 12px;
+    height: 17px;
+    left: -1.5px;
+    top: -17px;
+    border-radius: 70% 30% 60% 40%;
+    background: radial-gradient(ellipse at 50% 70%, #fff7a0 0 20%, #ffb94f 45%, #ff8a65 75%);
+    transform-origin: bottom center;
+    animation: flameFlicker 0.55s ease-in-out infinite alternate;
+    box-shadow: 0 0 13px #ffbd59a8;
+}
+
+.cake-top {
+    position: relative;
+    z-index: 3;
+    width: 62%;
+    height: 25px;
+    border-radius: 50%;
+    margin-bottom: -13px;
+    background: #fff0f7;
+    border: 3px solid #ffffff;
+    box-shadow: inset 0 -5px 0 #f6d6e8;
+}
+
+.blue-cake .cake-top {
+    background: #ecfbff;
+    box-shadow: inset 0 -5px 0 #c3edf9;
+}
+
+.cake-layer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 68%;
+    height: 43px;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+}
+
+.layer-top {
+    width: 66%;
+    border-radius: 8px 8px 4px 4px;
+    background: linear-gradient(180deg, #ffd6e9, #ffb4d5);
+    color: #d86c9c;
+}
+
+.blue-cake .layer-top {
+    background: linear-gradient(180deg, #dcf7ff, #a6e6f8);
+    color: #48a9cb;
+}
+
+.layer-bottom {
+    width: 78%;
+    height: 53px;
+    border-radius: 5px 5px 14px 14px;
+    background: linear-gradient(180deg, #ffbddb, #f18dbd);
+    color: #fff9fc;
+    font-size: 21px;
+    margin-top: -1px;
+    box-shadow: inset 0 -6px 0 #d977a5;
+}
+
+.blue-cake .layer-bottom {
+    background: linear-gradient(180deg, #b8edfb, #80d3ed);
+    box-shadow: inset 0 -6px 0 #65bddb;
+}
+
+.cake-plate {
+    width: 90%;
+    height: 17px;
+    margin-top: -1px;
+    border-radius: 50%;
+    background: linear-gradient(#ffffff, #dcd5e8);
+    border: 2px solid #ffffff;
+    box-shadow: 0 5px 0 #c9b7d5;
+}
+
+.tap-text {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 9px 16px;
+    border-radius: 25px;
+    background: #ffffffd9;
+    color: #a76c9c;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px #d5b7d622;
+    transition: background 0.2s ease;
+}
+
+.cake-button:hover .tap-text {
+    background: #ffffff;
+}
+
+.card-caption {
+    margin-top: 12px;
+    color: #98839d;
+    font-size: 11px;
+}
+
+.bottom-note {
+    margin-top: 35px;
+    color: #aa87a9;
+    font-size: 12px;
+}
+
+.surprise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #49334f80;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.surprise-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.surprise-card {
+    position: relative;
+    width: min(100%, 460px);
+    padding: 40px 25px 30px;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #fffafd, #f5f5ff);
+    text-align: center;
+    box-shadow: 0 20px 70px #34203c45;
+    transform: translateY(25px) scale(0.92);
+    transition: transform 0.35s ease;
+}
+
+.surprise-overlay.active .surprise-card {
+    transform: translateY(0) scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #f4e5f3;
+    color: #805c83;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.surprise-decoration {
+    margin-bottom: 14px;
+    font-size: 38px;
+    animation: decorationBounce 1.6s ease-in-out infinite;
+}
+
+.surprise-label {
+    color: #b18aaf;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.surprise-card h2 {
+    margin: 12px 0;
+    color: #d46ca7;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(27px, 6vw, 37px);
+    font-weight: 400;
+}
+
+.surprise-message {
+    margin: 0 auto;
+    max-width: 340px;
+    color: #786781;
+    font-size: 14px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.surprise-hearts {
+    margin: 20px 0;
+    color: #ed91c2;
+    letter-spacing: 7px;
+    animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+.music-button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 20px;
+    background: linear-gradient(135deg, #f4a6d0, #b8dff9);
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 16px #d3a9d53d;
+    transition: transform 0.2s ease;
+}
+
+.music-button:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes backgroundFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.85; }
+    50% { transform: translate3d(35px, -60vh, 0) rotate(160deg); }
+    90% { opacity: 0.8; }
+    100% {
+        transform: translate3d(-25px, -125vh, 0) rotate(320deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cakeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes flameFlicker {
+    from { transform: rotate(-7deg) scale(1); }
+    to { transform: rotate(8deg) scale(0.9, 1.08); }
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes decorationBounce {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-7px) rotate(3deg); }
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: min(100% - 20px, 420px);
+        padding-top: 32px;
+    }
+
+    .heading {
+        margin-bottom: 24px;
+    }
+
+    .small-title {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .birthday-girls {
+        gap: 12px;
+    }
+
+    .girl-card {
+        padding: 19px 6px 18px;
+        border-radius: 21px;
+    }
+
+    .girl-name {
+        font-size: clamp(21px, 5vw, 29px);
+    }
+
+    .character {
+        font-size: 10px;
+    }
+
+    .cake-scene {
+        height: 180px;
+        padding-bottom: 15px;
+    }
+
+    .candles {
+        gap: 13px;
+    }
+
+    .candle {
+        height: 29px;
+        width: 7px;
+    }
+
+    .candle i {
+        width: 10px;
+        height: 14px;
+        top: -14px;
+    }
+
+    .cake-top {
+        height: 19px;
+        margin-bottom: -10px;
+    }
+
+    .cake-layer {
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .layer-bottom {
+        height: 43px;
+        font-size: 17px;
+    }
+
+    .cake-plate {
+        height: 13px;
+    }
+
+    .tap-text {
+        padding: 8px 7px;
+        font-size: 10px;
+    }
+
+    .card-caption {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .bottom-note {
+        margin-top: 25px;
+    }
+
+    .surprise-card {
+        padding: 38px 18px 25px;
+    }
+
+    .surprise-message {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Animated cartoon characters */
+
+.characters-stage {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin: 12px auto 0;
+}
+
+.character-drawing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+    max-width: 175px;
+    min-width: 0;
+    transform-origin: center bottom;
+    animation: characterFly 2.4s ease-in-out infinite;
+}
+
+.character-drawing svg {
+    display: block;
+    width: 100%;
+    max-height: 175px;
+    overflow: visible;
+    filter: drop-shadow(0 7px 7px #2c173222);
+}
+
+.character-label {
+    margin-top: 4px;
+    font-size: clamp(10px, 2.5vw, 14px);
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 8px #36204766;
+}
+
+.blossom-character {
+    animation-delay: -.8s;
+}
+
+.kitty-character {
+    animation-delay: -.4s;
+}
+
+.character-drawing svg path,
+.character-drawing svg ellipse {
+    vector-effect: non-scaling-stroke;
+}
+
+.character-drawing:hover {
+    animation: characterJump .55s ease-in-out;
+}
+
+.characters-stage .bubbles-character {
+    filter: drop-shadow(0 0 9px #b6f0ff88);
+}
+
+.characters-stage .blossom-character {
+    filter: drop-shadow(0 0 9px #ffadd588);
+}
+
+.characters-stage .kitty-character {
+    filter: drop-shadow(0 0 9px #ffc3e288);
+}
+
+@keyframes characterFly {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-13px) rotate(3deg);
+    }
+}
+
+@keyframes characterJump {
+    0%, 100% { transform: translateY(0) scale(1); }
+    45% { transform: translateY(-20px) scale(1.06); }
+}
+
+@media (max-width: 480px) {
+    .characters-stage {
+        gap: 3px;
+    }
+
+    .character-drawing {
+        width: 33%;
+    }
+
+    .character-drawing svg {
+        max-height: 125px;
+    }
+}
+
+/* Cute animated Tap Your Cake button */
+
+.tap-text {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 22px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ffffff, #fce8f5);
+    color: #c45c9c;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    box-shadow:
+        0 6px 0 #e8c9e0,
+        0 9px 18px #d7a7d955;
+    cursor: pointer;
+    animation: tapButtonFloat 2s ease-in-out infinite;
+    transition: background .3s, box-shadow .3s;
+}
+
+.maram-card .tap-text {
+    background: linear-gradient(135deg, #ffffff, #dff7ff);
+    color: #399fc4;
+    box-shadow:
+        0 6px 0 #b8e7f5,
+        0 9px 18px #83d5f455;
+}
+
+.merhan-card .tap-text {
+    background: linear-gradient(135deg, #ffffff, #ffe4f0);
+    color: #d45e99;
+    box-shadow:
+        0 6px 0 #f4c1da,
+        0 9px 18px #f3a3ca55;
+}
+
+.tap-text::before {
+    content: "✦";
+    font-size: 15px;
+    animation: tapSparkle 1.2s ease-in-out infinite;
+}
+
+.tap-text::after {
+    content: "✦";
+    font-size: 12px;
+    animation: tapSparkle 1.2s .6s ease-in-out infinite;
+}
+
+.cake-button:hover .tap-text {
+    transform: translateY(-3px);
+    filter: brightness(1.04);
+}
+
+.cake-button:active .tap-text {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+@keyframes tapButtonFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -4px;
+    }
+}
+
+@keyframes tapSparkle {
+    0%, 100% {
+        opacity: .45;
+        transform: scale(.8) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(25deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tap-text,
+    .tap-text::before,
+    .tap-text::after {
+        animation: none;
+    }
+}
+
+.birthday-surprise {
+    text-align: center;
+    padding: 20px 10px;
+    overflow: hidden;
+    color: #75516e;
+}
+
+.birthday-hero {
+    font-size: 90px;
+    margin: 15px auto;
+    animation: heroFloat 2s ease-in-out infinite;
+}
+
+.birthday-cake {
+    width: 180px;
+    margin: 40px auto 25px;
+    position: relative;
+    transition: transform .7s ease;
+}
+
+.cake-icing {
+    height: 18px;
+    background: #fff4fc;
+    border-radius: 50%;
+    border: 3px solid #eaa3d0;
+    position: relative;
+    z-index: 2;
+}
+
+.cake-body {
+    height: 55px;
+    background: linear-gradient(#ffb8dd, #f17bb9);
+    border: 3px solid #d85c9e;
+    border-radius: 8px 8px 15px 15px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cake-bottom {
+    height: 12px;
+    background: #fff1fa;
+    border: 3px solid #d85c9e;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.candle-row {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    height: 43px;
+    align-items: flex-end;
+}
+
+.birthday-candle {
+    width: 8px;
+    height: 30px;
+    background: repeating-linear-gradient(
+        45deg, #fff 0 5px, #f5a0cd 5px 10px
+    );
+    border-radius: 3px 3px 0 0;
+    position: relative;
+}
+
+.birthday-candle i {
+    position: absolute;
+    width: 12px;
+    height: 17px;
+    background: #ffb52e;
+    border-radius: 50% 50% 45% 45%;
+    top: -19px;
+    left: -2px;
+    box-shadow: 0 0 12px #ffca54;
+    animation: flameDance .4s infinite alternate;
+}
+
+.birthday-surprise.is-blown .birthday-candle i {
+    opacity: 0;
+    transform: scale(.1) translateY(-10px);
+    transition: .4s;
+}
+
+.birthday-start {
+    border: none;
+    padding: 15px 22px;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(135deg, #ed79b5, #bd76db);
+    box-shadow: 0 6px 0 #c35c9a, 0 10px 25px #e9a2d755;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.birthday-start:hover {
+    transform: translateY(-3px);
+}
+
+.birthday-start:disabled {
+    opacity: .7;
+    cursor: default;
+}
+
+.birthday-hint {
+    font-size: 14px;
+}
+
+.birthday-message {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: opacity .8s, transform .8s, max-height .8s;
+}
+
+.birthday-surprise.show-message .birthday-message {
+    opacity: 1;
+    max-height: 350px;
+    transform: translateY(0);
+}
+
+.birthday-message h2 {
+    color: #d94d98;
+    line-height: 1.6;
+}
+
+.birthday-message p {
+    line-height: 1.9;
+}
+
+.birthday-surprise.show-message .birthday-hero {
+    animation: birthdayDance .7s ease-in-out 3;
+}
+
+.birthday-surprise.is-blown .birthday-cake {
+    animation: cakeCelebrate .7s ease;
+}
+
+.birthday-surprise.is-blown .party-lights {
+    animation: sparkleParty .6s ease-in-out 5;
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes flameDance {
+    from { transform: rotate(-5deg) scale(.95); }
+    to { transform: rotate(5deg) scale(1.08); }
+}
+
+@keyframes birthdayDance {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-18px) rotate(7deg); }
+}
+
+@keyframes cakeCelebrate {
+    50% { transform: scale(1.08) rotate(-3deg); }
+}
+
+@keyframes sparkleParty {
+    50% { transform: scale(1.2); opacity: .5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .birthday-hero,
+    .birthday-candle i {
+        animation: none;
+    }
+}
+/* Photo gallery */
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Photo frames */
+.memory-photo {
+    width: 130px;
+    height: 160px;
+    object-fit: cover;
+    padding: 7px;
+    background: white;
+    border: 2px solid #f7c9dc;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Hover animation */
+.memory-photo:hover {
+    transform: scale(1.08) rotate(0deg);
+    z-index: 5;
+}
+
+/* Bubbles theme */
+.bubbles-gallery .memory-photo {
+    border-color: #a9dcff;
+    box-shadow: 0 5px 15px rgba(100, 180, 255, 0.25);
+}
+
+/* Blossom theme */
+.blossom-gallery .memory-photo {
+    border-color: #ffb6d0;
+    box-shadow: 0 5px 15px rgba(255, 120, 170, 0.25);
+}
+
+/* Cake box photo positions */
+.cake-photo-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cake-photo-section .photo-left {
+    transform: rotate(-8deg);
+}
+
+.cake-photo-section .photo-right {
+    transform: rotate(8deg);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .memory-photo {
+        width: 90px;
+        height: 115px;
+    }
+
+    .photo-gallery {
+        gap: 10px;
+        padding: 10px;
+    }
+}
